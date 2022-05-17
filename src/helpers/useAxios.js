@@ -1,16 +1,45 @@
 import axios from 'axios'
+import {useState, useEffect, useRef} from 'react'
 
-const response = async() => {
-  const url = 'http://localhost:5000/reserves'
-  await axios.get( url )
-  .then(res => {
-    const data = res.data
-    return data
-  })
-    .catch(err => {
-      console.log(err);
+const useAxios = (url) => {
+  
+  const isMounted = useRef(true)
+
+  const [state, setState] = useState({data :null, loading: true, error: null})
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false
+    }
+  }, [])
+
+  useEffect(() => {
+
+  setState({data: null, loading: true, error: null})
+
+  axios.get(url)
+  .then(response => response.json())
+  .then(data => {
+      if(isMounted.current) {
+        setState({
+        data, 
+        loading: false,
+        error: null
+        })
+      }
     })
+  .catch(() => {
+    setState({
+        data: null,
+        loading: false,
+        error: 'No se pudo cargar la info'
+    })
+  })
+
+}, [url]);
+
+  return state
 }
 
-export default response
+export default useAxios
 

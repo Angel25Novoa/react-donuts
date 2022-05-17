@@ -1,11 +1,9 @@
 import React from 'react';
-import response from '../helpers/useAxios';
-
-// response.then(data => {
-//   console.log('data',data)
-// })
+import useAxios from '../helpers/useAxios';
 
 const Reservaciones = (data) => {
+  const url = 'http://localhost:5000/reserves'
+  useAxios(url)
   return (<h1>Reservaciones</h1>)
   // return (
   //   <>
