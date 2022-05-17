@@ -15,6 +15,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import ComponenteInput from './ComponenteInput';
 import dona from '../recursos/Dona.png';
 import Footer from './Footer';
+import Reservaciones from './Reservaciones';
 
 const Form = () => {
 
@@ -140,6 +141,7 @@ const Form = () => {
       {exito === true && <MsgExito>Tu reservacion esta hecha!</MsgExito>}
       </ContBotonCent>
     </Formulario>
+    <Reservaciones />
     <Footer />
   </>
   )
