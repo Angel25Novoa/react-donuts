@@ -22,7 +22,7 @@ const Form = () => {
   const [email, cambiarEmail] = useState({campo: '', valido: null})
   const [telefono, cambiarTelefono] = useState({campo: '', valido: null})
   const [fecha, cambiarFecha] = useState({campo: '', valido: null})
-  const [terminos, cambiarTerminos] = useState(true)
+  const [terminos, cambiarTerminos] = useState(false)
   const [exito, cambiarExito] = useState(null)
 
   const expresiones = {
@@ -45,7 +45,11 @@ const Form = () => {
         fecha: fecha.campo
     };
     console.log(dfcampo);
-    axios.post('http://localhost:5000/reserves', dfcampo)
+    const url = 'http://localhost:5000/reserves'
+    // const config = {
+    //   headers: {'Access-Control-Allow-Origin': '*'}
+    // };
+    axios.post( url, dfcampo )
     .then(res => res.json())
     .then(res => {
         alert('Tu reservacion esta hecha!')
@@ -82,7 +86,7 @@ const Form = () => {
       tipo="text"
       label="Nombre"
       placeholder ="Ingresa tu nombre completo"
-      name="usuario"
+      name="name"
       leyendaError=""
       expresionRegular={expresiones.nombre}
       />
@@ -92,7 +96,7 @@ const Form = () => {
       tipo="email"
       label="Correo electronico"
       placeholder ="correo@correo.com"
-      name="usuario"
+      name="email"
       leyendaError=""
       expresionRegular={expresiones.correo}
       />
@@ -108,8 +112,8 @@ const Form = () => {
       cambiarEstado={cambiarTelefono}
       tipo="phone"
       label="Numero telefonico"
-      placeholder ="Ingresa tu nombre completo"
-      name="usuario"
+      placeholder ="Ingresa un teléfono de contacto"
+      name="phone"
       leyendaError=""
       expresionRegular={expresiones.telefono}
       />
