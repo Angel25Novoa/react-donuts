@@ -15,7 +15,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import ComponenteInput from './ComponenteInput';
 import dona from '../recursos/Dona.png';
 import Footer from './Footer';
-import App from '../elementos/useAxios';
+import Reserves from './Reserves';
 
 const Form = () => {
 
@@ -46,7 +46,7 @@ const Form = () => {
         fecha: fecha.campo
     };
     console.log(dfcampo);
-    const url = 'http://localhost:5000/reserves'
+    const url = 'http://localhost:5010/reserves'
     // const config = {
     //   headers: {'Access-Control-Allow-Origin': '*'}
     // };
@@ -141,7 +141,7 @@ const Form = () => {
       {exito === true && <MsgExito>Tu reservacion esta hecha!</MsgExito>}
       </ContBotonCent>
     </Formulario>
-    <App />
+    <Reserves />
     <Footer />
   </>
   )
