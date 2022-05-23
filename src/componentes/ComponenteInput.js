@@ -23,9 +23,9 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
         }
     }
 
-    const onInputChange = (e) => {
-        this.setState({ name: e.target.value })
-    }
+    // const onInputChange = (e) => {
+    //     this.setState({ name: e.target.value })
+    // }
 
     return (
         <div>
