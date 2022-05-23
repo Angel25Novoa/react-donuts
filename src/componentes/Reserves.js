@@ -4,29 +4,9 @@ import axios from 'axios'
 const Reserves = () => {
   const [info, setInfo] = useState({})
   const getInfo = async () => {
-    const url = 'http://localhost:5010/reserves'
+    const url = 'http://localhost:5000/reserves'
     const resp = await axios.get(url)
     setInfo(resp.data)
-    // console.log(resp.data.data)
-    // const items = resp.data.data
-    // const renderReserves = (arr) => {
-    //   if(Array.isArray(arr)){
-    //   arr.map((item) => {
-    //     console.log(item)
-    //     return (
-    //       <li key={item.id}>
-    //         <p>{item.nombre}</p>
-    //         <p>{item.email}</p>
-    //         <p>{item.telefono}</p>
-    //         <p>{item.fecha}</p>
-    //       </li>
-    //     )
-    //   })
-    //   } else {
-    //     return(<h4>Aún no hay reservaciones</h4>)
-    //   }
-    // }
-    // renderReserves(items)
   }
 
   useEffect(() => {
@@ -38,11 +18,11 @@ const Reserves = () => {
       return arr.map((item) => {
         // console.log(item)
         return (
-          <li key={item.id}>
+          <li className='donuts-reserves' key={item.id}>
             <p>{item.nombre}</p>
             <p>{item.email}</p>
             <p>{item.telefono}</p>
-            <p>{item.fecha}</p>
+            <h4>{item.fecha}</h4>
           </li>
         )
       })
@@ -57,11 +37,8 @@ const Reserves = () => {
       <hr />
       <div className="App-header">
         <button className='reserv-button' onClick={getInfo}>Ver reservaciones</button>
-        <ul>
-          
-            {console.log('------->',info.data)}
-            {renderReserves(info.data)}
-          
+        <ul className='donuts-reserves-container'>
+          {renderReserves(info.data)}
         </ul>
       </div>
     </div>

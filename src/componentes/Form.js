@@ -7,13 +7,11 @@ import {
   ContBotonCent, 
   Boton, 
   MsgExito, 
-  MsgError,
-  Logo
+  MsgError
 } from '../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import ComponenteInput from './ComponenteInput';
-import dona from '../recursos/Dona.png';
 import Footer from './Footer';
 import Reserves from './Reserves';
 
@@ -46,7 +44,7 @@ const Form = () => {
         fecha: fecha.campo
     };
     console.log(dfcampo);
-    const url = 'http://localhost:5010/reserves'
+    const url = 'http://localhost:5000/reserves'
     // const config = {
     //   headers: {'Access-Control-Allow-Origin': '*'}
     // };
@@ -79,7 +77,6 @@ const Form = () => {
 
   return (
     <>
-    <Logo><img src={dona} alt='logo'/></Logo>
     <Formulario action="" onSubmit={onSubmit}>
       <ComponenteInput 
       estado={nombre}

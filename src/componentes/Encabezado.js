@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    NavLink
 } from "react-router-dom";
 import Home from './Home';
 import Blog from './Blog';
@@ -24,10 +24,10 @@ const Encabezado = () => {
                 <Router>
                     <Header>
                         <NavBar>
-                            <Links href="/"><Link className='Home' to="/">Home</Link></Links>
-                            <Links href="/Blog"><Link className='Blog' to="/Blog">Blog</Link></Links>
-                            <Links href="/Formulario"><Link className='Form' to="/Form">Reservaciones</Link></Links>
-                            <Links href="/Menu"><Link className='Home' to="/Menu">Menú</Link></Links>
+                        <NavLink className='Home' to="/"><Links>Home</Links></NavLink>
+                        <NavLink className='Blog' to="/Blog"><Links>Blog</Links></NavLink>
+                        <NavLink className='Form' to="/Form"><Links>Reservaciones</Links></NavLink>
+                        <NavLink className='Home' to="/Menu"><Links>Menú</Links></NavLink>
                         </NavBar>
                     </Header>
                     <Routes>

@@ -164,7 +164,9 @@ const NavBar = styled.ul`
 `;
 
 const Links = styled.button`
-    width: 20%;
+    width: 200px;
+    color: #fff;
+    font-weight: 700;
     text-decoration: none;
     padding: 10px;
     font-weight: 500;
@@ -178,11 +180,6 @@ const Links = styled.button`
 		justify-content: center;
         width: auto;
 	}
-    a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 500;
-    }
     &:hover {
         box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
         background-color: #0489CC;
@@ -219,6 +216,7 @@ const Fondo = styled.div`
     flex-wrap: wrap;
     height: 220px;
     justify-content: space-around;
+    width: 100%;
     div {
         margin: 0 15px 0 15px;
     }
