@@ -35,7 +35,7 @@ const useAxios = () => {
 
   const renderReserves = (arr) => {
     if(Array.isArray(arr)){
-      arr.map((item) => {
+      return arr.map((item) => {
         // console.log(item)
         return (
           <li key={item.id}>
