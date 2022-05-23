@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
-const useAxios = () => {
+const Reserves = () => {
   const [info, setInfo] = useState({})
   const getInfo = async () => {
-    const url = 'http://localhost:5000/reserves'
+    const url = 'http://localhost:5010/reserves'
     const resp = await axios.get(url)
     setInfo(resp.data)
     // console.log(resp.data.data)
@@ -60,9 +60,7 @@ const useAxios = () => {
         <ul>
           
             {console.log('------->',info.data)}
-            {setTimeout(() => {
-              renderReserves(info.data)
-            }, 2000) }
+            {renderReserves(info.data)}
           
         </ul>
       </div>
@@ -70,4 +68,4 @@ const useAxios = () => {
   );
 }
 
-export default useAxios;
+export default Reserves;
