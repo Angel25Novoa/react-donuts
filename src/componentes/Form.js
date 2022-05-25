@@ -44,7 +44,7 @@ const Form = () => {
         fecha: fecha.campo
     };
     console.log(dfcampo);
-    const url = 'http://localhost:5000/reserves'
+    const url = 'https://donas-back.herokuapp.com/reserves'
     // const config = {
     //   headers: {'Access-Control-Allow-Origin': '*'}
     // };

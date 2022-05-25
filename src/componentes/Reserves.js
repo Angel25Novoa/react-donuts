@@ -4,7 +4,7 @@ import axios from 'axios'
 const Reserves = () => {
   const [info, setInfo] = useState({})
   const getInfo = async () => {
-    const url = 'http://localhost:5000/reserves'
+    const url = 'https://donas-back.herokuapp.com/reserves'
     const resp = await axios.get(url)
     setInfo(resp.data)
   }
